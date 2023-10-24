@@ -34,7 +34,7 @@ get("/payment/new") do
 end
 
 get("/payment/results") do
-  @the_apr = params.fetch("users_apr").to_f.to_fs(:percentage)
+  @the_apr = params.fetch("users_apr").to_f.to_fs(:percentage, { :precision => 4 })
   @the_years = params.fetch("users_years").to_i
   @the_principal = params.fetch("users_principal").to_f.to_fs(:currency)
 
